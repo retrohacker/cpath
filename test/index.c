@@ -4,7 +4,7 @@
 #include "../cpath.h"
 
 int test1() {
-  test* t = new_test("path_split: should split path");
+  test* t = new_test("path_split: should split path with . prefix");
   char** actual = path_split("./foo/bar/buzz/bazz.txt");
   char* expected[6] = {".", "foo", "bar", "buzz", "bazz.txt", NULL};
   int i;
@@ -23,7 +23,7 @@ int test1() {
 }
 
 int test2() {
-  test* t = new_test("path_split: should split path");
+  test* t = new_test("path_split: should split path no prefix");
   char** actual = path_split("foo/bar/buzz/bazz.txt");
   char* expected[6] = {".", "foo", "bar", "buzz", "bazz.txt", NULL};
   int i;
@@ -43,7 +43,7 @@ int test2() {
 }
 
 int test3() {
-  test* t = new_test("path_split: should split path");
+  test* t = new_test("path_split: should split path with / prefix");
   char** actual = path_split("/foo/bar/buzz/bazz.txt");
   char* expected[6] = {"/", "foo", "bar", "buzz", "bazz.txt", NULL};
   int i;
@@ -63,7 +63,7 @@ int test3() {
 }
 
 int test4() {
-  test* t = new_test("path_split: should split path");
+  test* t = new_test("path_split: should split path with escape characters");
   char** actual = path_split("/foo/bar\\/buzz\\/bazz.txt");
   char* expected[6] = {"/", "foo", "bar\\", "buzz\\", "bazz.txt", NULL};
   int i;

@@ -1,0 +1,5 @@
+*.dblite
+*.swp
+*.o
+*.a
+test/test
