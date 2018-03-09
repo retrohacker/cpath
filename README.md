@@ -50,7 +50,7 @@ path_split("/foo/bar/buzz/bazz.txt");
 
 # Development
 
-```sh
+```text
 $ git clone --recursive git@github.com:retrohacker/cpath
 $ cd cpath
 $ scons test
