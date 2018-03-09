@@ -19,6 +19,7 @@ int test1() {
     equal(t, "%s", "Expected '%s' to equal '%s'", actual[i], expected[i]);
     free(actual[i]);
   }
+  free(actual);
   return done(t);
 }
 

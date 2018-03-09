@@ -36,19 +36,16 @@ char** path_split(char* path) {
     free(cpy);
     cpy = strdup(dir);
     // If we have run out of components, stop parsing
-    if(strcmp(dir, ".") == 0 || (strcmp(dir, "/") | strcmp(base, "/")) == 0) {
+    if(strcmp(dir, ".") == 0 || strcmp(dir, "/") == 0) {
       b = 1;
-      // If the path starts with a /, then that component is already in the
-      // array and we don't need to duplicate it
-      if(path[0] != '/') {
-        i++;
-        result[i] = strdup(dir);
-      }
+      i++;
+      result[i] = strdup(dir);
     }
     free(basec);
     free(dirc);
     i++;
   } while(i < slashes - 1 && b == 0);
+  free(cpy);
   // Reverse components so they are in the correct order
   int j = i - 1;
   for(i = 0; i < j/2; i++) {
