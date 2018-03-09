@@ -1,0 +1,3 @@
+[submodule "deps/ctest"]
+	path = deps/ctest
+	url = git@github.com:retrohacker/ctest
