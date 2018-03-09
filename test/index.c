@@ -30,7 +30,6 @@ int test2() {
   for(i = 0; ; i++) {
     if(expected[i] == NULL || actual[i] == NULL) {
       while(actual[i] != NULL && i < 10) {
-        printf("%s\n", actual[i]);
         i += 1;
       }
       equal(t, "%d", "Found %d elements and expected %d", i, 5);
@@ -51,7 +50,6 @@ int test3() {
   for(i = 0; ; i++) {
     if(expected[i] == NULL || actual[i] == NULL) {
       while(actual[i] != NULL && i < 10) {
-        printf("%s\n", actual[i]);
         i += 1;
       }
       equal(t, "%d", "Found %d elements and expected %d", i, 5);
@@ -66,13 +64,12 @@ int test3() {
 
 int test4() {
   test* t = new_test("path_split: should split path");
-  char** actual = path_split("/foo\/bar\\/buzz\\\/bazz.txt");
+  char** actual = path_split("/foo/bar\\/buzz\\/bazz.txt");
   char* expected[6] = {"/", "foo", "bar\\", "buzz\\", "bazz.txt", NULL};
   int i;
   for(i = 0; ; i++) {
     if(expected[i] == NULL || actual[i] == NULL) {
       while(actual[i] != NULL && i < 10) {
-        printf("%s\n", actual[i]);
         i += 1;
       }
       equal(t, "%d", "Found %d elements and expected %d", i, 5);
